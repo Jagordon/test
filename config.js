@@ -2,7 +2,8 @@
 // Docs https://osdatahub.os.uk/docs/places/gettingStarted
 
 const config = {
-  apiKey = 'gLfSz6lFO7CVKDABcxg96TSAf4DK5YNQ'
+  apiKey: 'gLfSz6lFO7CVKDABcxg96TSAf4DK5YNQ',
+  apiEndpoint: 'https://api.os.uk/search/places/v1/postcode'
 }
 
 module.exports = config;
