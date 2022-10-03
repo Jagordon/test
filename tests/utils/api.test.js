@@ -2,13 +2,14 @@ const api = require('../../utils/api');
 const axios = require('axios');
 jest.mock('axios');
 
-test('the data is peanut butter', async () => {
-    axios.get.mockImplementation(() => Promise.reject(undefined));
-    const data = await api();
-    expect(data).toBe(undefined);
+test('the api throws an error', async () => {
+    axios.get.mockImplementation(() => Promise.reject({message: 'error thrown'}));
+    const data = await api().catch((error) => {
+        expect(error.message).toBe('error thrown');
+    });
   });
 
-  test('the data is what', async () => {
+  test('the data is good', async () => {
     const returnedData = { data: {} }
     axios.get.mockImplementation(() => Promise.resolve(returnedData));
     const data = await api('NE3');

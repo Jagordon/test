@@ -3,7 +3,7 @@ const { append } = require('express/lib/response');
 var router = express.Router();
 
 // Handle get and post requests here
-router.get('/', (_req, res, _next) => {
+router.get('/', (req, res, next) => {
     res.render('index.njk');
 });
 
